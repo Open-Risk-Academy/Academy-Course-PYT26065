@@ -124,10 +124,8 @@ def create_loan_table(df):
 
 
 # Input parameters for actual data fragment (file segment)
-input_directory = "/your/data/dir/here/"
-acquisition_year = '2010'
-acquisition_qtr = 'Q2'
-filename = input_directory + '2010Q2.100.part.csv'
+input_directory = "./PARTS/"
+filename = input_directory + '2022Q2.30.part.csv'
 
 if __name__ == '__main__':
     input_table = load_file(filename, column_names)

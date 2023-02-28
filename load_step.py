@@ -30,10 +30,9 @@ from config import column_names, column_datatypes
 # Input parameters for the data fragment (file segment) we want to work with
 # Replace those with your local configuration / desired values
 
-input_directory = "/insert/your/path/here/"
-acquisition_year = '2010'
-acquisition_qtr = 'Q2'
-filename = input_directory + '2010Q2.100.part.csv'
+# input_directory = "/insert/your/path/here/"
+input_directory = "./PARTS/"
+filename = input_directory + '2010Q2.64.part.csv'
 
 
 # Set up a function to read in the Loan Performance file fragment using pandas
@@ -60,6 +59,5 @@ if __name__ == '__main__':
     # Explore the dataset with simple print functions
     print(input_table['LOAN_ID'].values[:100])
     # print(input_table.iloc[:, 41])
-    # Dtype Warning: Columns (40,101,105) have mixed types.
     # print(input_table.dtypes)
     # print(input_table['RPRCH_DTE'])

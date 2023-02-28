@@ -24,10 +24,10 @@ import pandas as pd
 from config import column_names, column_datatypes
 
 # Input parameters for actual data fragment (single loan)
-input_directory = "/your/directory/path/here/"
+input_directory = "./SPLIT/"
 acquisition_year = '2010'
 acquisition_qtr = 'Q2'
-filename = input_directory + '561158160257.csv'
+filename = input_directory + '000131391438.csv'
 
 
 def load_file(filename, col_names):
@@ -45,12 +45,14 @@ if __name__ == '__main__':
     pd.set_option('display.width', 200)
     pd.set_option('mode.chained_assignment', 'raise')
 
-    # Load Loan Performance file
+    # Load Loan Performance file for a single loan id
     input_table = load_file(filename, column_names)
+
     # Convert the Acquisition Data Column to the Number of Monthly Periods
     input_table['ACT_PERIOD_NUM'] = input_table['ACT_PERIOD'].apply(
         lambda x: 12 * int(str(x)[1:5]) + int(str(x)[0:1]) if len(str(x)) == 5 else 12 * int(str(x)[2:6]) + int(
             str(x)[0:2]) if len(str(x)) == 6 else 0)
+
     # Group and Select Earliest Period
     acquisition_table = input_table.loc[input_table.groupby('LOAN_ID')['ACT_PERIOD_NUM'].idxmin()]
     # Reshape table for easier inspection of column values

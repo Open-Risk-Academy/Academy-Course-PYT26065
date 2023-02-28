@@ -21,13 +21,14 @@
 BEGIN {
     RowCount = 0
     PartCount = 0
+    File = "2022Q2"
 }
 {
     if ($2 in chunk)
-        print >> "2010Q2."chunk[$2]".part.csv"
+        print >> "./PARTS/"File"."chunk[$2]".part.csv"
     else {
         chunk[$2] = PartCount
-        print > "2010Q2."chunk[$2]".part.csv"
+        print > "./PARTS/"File"."chunk[$2]".part.csv"
     }   
     if ( RowCount % 100000 == 0 )
         PartCount++
