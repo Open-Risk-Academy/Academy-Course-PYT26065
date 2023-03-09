@@ -3,7 +3,7 @@ Processing Agency Mortgage Data with Awk, Pandas and Django - Part 1: Static Dat
 
 ![Course Image](pyt26065_course_image.png)
 
-<p>This crash course illustrates how to process loan-level US Agency mortgage data using awk, pandas and django. The first part of the course focuses on static (acquisition) type attributes. The course is at a core technical level. It requires familiarity with command line tools (Ideally a linux environment) and Python. The repository includes various scripts used in the course.</p> 
+<p>This [crash course](https://www.openriskacademy.com/course/view.php?id=65) illustrates how to process loan-level US Agency mortgage data using awk, pandas and django. The first part of the course focuses on static (acquisition) type attributes. The course is at a core technical level. It requires familiarity with command line tools (Ideally a linux environment) and Python. The repository includes various scripts used in the course.</p> 
 
 <p>Please Note: Replicating the data processing steps on an actual Fannie Mae dataset <i>requires</i> the Academy student to download such data themselves from the Data Dynamics website and abide with their terms and conditions.</p>
 
