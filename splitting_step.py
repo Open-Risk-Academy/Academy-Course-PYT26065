@@ -22,8 +22,8 @@
 import pandas as pd
 
 from config import column_names, column_datatypes
-from config import static_fields
 from config import counterparty_static, loan_static, property_collateral_static
+from config import static_fields
 from data_dictionaries import *
 
 
