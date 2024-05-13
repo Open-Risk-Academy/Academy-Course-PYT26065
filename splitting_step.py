@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Open Risk (https://www.openriskmanagement.com)
+# Copyright (c) 2023 - 2024 Open Risk (https://www.openriskmanagement.com)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -27,8 +27,8 @@ from config import static_fields
 from data_dictionaries import *
 
 
-def load_file(filename, col_names):
-    df = pd.read_csv(filename,
+def load_file(input_filename, col_names):
+    df = pd.read_csv(input_filename,
                      sep="|",
                      names=col_names,
                      dtype=column_datatypes,
@@ -57,8 +57,13 @@ def create_portfolio_table(df):
 # TODO Convert to date
 def create_portfolio_snapshot_table(df):
     _pst = pd.DataFrame(columns=['monthly_reporting_period'])
-    for period in df['ACT_PERIOD'].unique():
+    df1 = df.copy()
+
+    for period in df1['ACT_PERIOD'].unique():
         _pst.loc[len(_pst.index)] = [period]
+
+    _pst['monthly_reporting_period'] = _pst['monthly_reporting_period'].apply(
+        lambda x: pd.to_datetime(x, format="%m%Y"))
     return _pst
 
 
@@ -125,7 +130,7 @@ def create_loan_table(df):
 
 # Input parameters for actual data fragment (file segment)
 input_directory = "./PARTS/"
-filename = input_directory + '2022Q2.30.part.csv'
+filename = input_directory + '2011Q1.1.part.csv'
 
 if __name__ == '__main__':
     input_table = load_file(filename, column_names)
@@ -137,8 +142,8 @@ if __name__ == '__main__':
     loan_table = create_loan_table(static_table)
     property_collateral_table = create_property_collateral_table(static_table)
 
-    portfolio_table.to_csv("portfolio.csv", sep='|', index=False)
-    portfolio_snapshot_table.to_csv("portfolio_snapshot.csv", sep='|', index=False)
-    counterparty_table.to_csv("counterparty.csv", sep='|', index=False)
-    loan_table.to_csv("loan.csv", sep='|', index=False)
-    property_collateral_table.to_csv("property_collateral.csv", sep='|', index=False)
+    portfolio_table.to_csv("DB_TABLES/portfolio.csv", sep='|', index=False)
+    portfolio_snapshot_table.to_csv("DB_TABLES/portfolio_snapshot.csv", sep='|', index=False)
+    counterparty_table.to_csv("DB_TABLES/counterparty.csv", sep='|', index=False)
+    loan_table.to_csv("DB_TABLES/loan.csv", sep='|', index=False)
+    property_collateral_table.to_csv("DB_TABLES/property_collateral.csv", sep='|', index=False)

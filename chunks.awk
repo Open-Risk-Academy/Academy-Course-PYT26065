@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Open Risk (https://www.openriskmanagement.com)
+# Copyright (c) 2023 - 2024 Open Risk (https://www.openriskmanagement.com)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,8 @@
 BEGIN {
     RowCount = 0
     PartCount = 0
-    File = "2022Q2"
+    # File = "2022Q2"
+    # File = "2011Q1"
 }
 {
     if ($2 in chunk)
@@ -29,12 +30,12 @@ BEGIN {
     else {
         chunk[$2] = PartCount
         print > "./PARTS/"File"."chunk[$2]".part.csv"
-    }   
-    if ( RowCount % 100000 == 0 )
+    }
+    if (RowCount % 100000 == 0)
         PartCount++
     RowCount++
 }
 END {
-    for ( var in chunk )
+    for (var in chunk)
         print var ": " chunk[var]
 }

@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Open Risk (https://www.openriskmanagement.com)
+# Copyright (c) 2023 - 2024 Open Risk (https://www.openriskmanagement.com)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -19,18 +19,18 @@
 # SOFTWARE.
 
 BEGIN {
-   RowCount = 0
+    RowCount = 0
 }
 {
-    for(i=1; i<=NF; i++)
+    for (i = 1; i <= NF; i++)
         {
             if ($i) arr[i]++
         }
-    RowCount++##
+    RowCount++
 }
 END {
     print RowCount
-    for ( i in arr )
-        print "|" i "|" int(100*arr[i]/RowCount)"%|"
+    for (i in arr)
+        print "|" i "|" int(100 * arr[i] / RowCount)"%|"
 
 }

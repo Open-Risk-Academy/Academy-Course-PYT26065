@@ -127,9 +127,7 @@ column_names = ["POOL_ID",
                 "RE_PROCS_FLAG",
                 "ADR_TYPE",
                 "ADR_COUNT",
-                "ADR_UPB",
-                "PDME",
-                "INTEREST_BEARING_UPB"]
+                "ADR_UPB"]
 
 column_datatypes = {
     "POOL_ID": str,
@@ -240,15 +238,17 @@ column_datatypes = {
     "ADR_TYPE": str,
     "ADR_COUNT": pd.Int64Dtype(),
     "ADR_UPB": float,
-    "PDME": str,
-    "INTEREST_BEARING_UPB": float
 }
 
-static_fields = ['LOAN_ID', 'ACT_PERIOD', 'CHANNEL', 'SELLER', 'ORIG_RATE', 'ORIG_UPB', 'ORIG_TERM', 'ORIG_DATE', 'FIRST_PAY', 'OLTV', 'OCLTV', 'NUM_BO', 'DTI', 'CSCORE_B', 'CSCORE_C', 'FIRST_FLAG', 'PURPOSE', 'PROP', 'NO_UNITS', 'OCC_STAT', 'MSA', 'STATE', 'ZIP', 'MI_PCT', 'PRODUCT', 'MI_TYPE', 'RELOCATION_MORTGAGE_INDICATOR', 'HIGH_BALANCE_LOAN_INDICATOR', 'ACT_PERIOD_NUM', 'PPMT_FLG', 'IO']
+static_fields = ['LOAN_ID', 'ACT_PERIOD', 'CHANNEL', 'SELLER', 'ORIG_RATE', 'ORIG_UPB', 'ORIG_TERM', 'ORIG_DATE',
+                 'FIRST_PAY', 'OLTV', 'OCLTV', 'NUM_BO', 'DTI', 'CSCORE_B', 'CSCORE_C', 'FIRST_FLAG', 'PURPOSE', 'PROP',
+                 'NO_UNITS', 'OCC_STAT', 'MSA', 'STATE', 'ZIP', 'MI_PCT', 'PRODUCT', 'MI_TYPE',
+                 'RELOCATION_MORTGAGE_INDICATOR', 'HIGH_BALANCE_LOAN_INDICATOR', 'ACT_PERIOD_NUM', 'PPMT_FLG', 'IO']
 
 counterparty_static = ['LOAN_ID', 'NUM_BO', 'DTI', 'CSCORE_B', 'CSCORE_C', 'FIRST_FLAG']
 
-loan_static = ['LOAN_ID', 'SELLER', 'ACT_PERIOD', 'CHANNEL', 'ORIG_RATE', 'ORIG_UPB', 'ORIG_TERM', 'ORIG_DATE', 'FIRST_PAY', 'OLTV',
+loan_static = ['LOAN_ID', 'SELLER', 'ACT_PERIOD', 'CHANNEL', 'ORIG_RATE', 'ORIG_UPB', 'ORIG_TERM', 'ORIG_DATE',
+               'FIRST_PAY', 'OLTV',
                'PURPOSE', 'PRODUCT', 'RELOCATION_MORTGAGE_INDICATOR', 'HIGH_BALANCE_LOAN_INDICATOR', 'MI_PCT',
                'MI_TYPE', 'OCLTV', 'PPMT_FLG', 'IO']
 

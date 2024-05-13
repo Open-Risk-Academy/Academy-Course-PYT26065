@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Open Risk (https://www.openriskmanagement.com)
+# Copyright (c) 2023 - 2024 Open Risk (https://www.openriskmanagement.com)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -32,16 +32,17 @@ from config import column_names, column_datatypes
 
 # input_directory = "/insert/your/path/here/"
 input_directory = "./PARTS/"
-filename = input_directory + '2010Q2.64.part.csv'
+# filename = input_directory + '2010Q2.64.part.csv'
+filename = input_directory + '2011Q1.1.part.csv'
 
 
-# Set up a function to read in the Loan Performance file fragment using pandas
+# Set up a function to read in a Loan Performance file fragment using pandas
 
-def load_file(filename, col_names, column_datatypes):
-    df = pd.read_csv(filename,
+def load_file(input_filename, col_names, datatypes):
+    df = pd.read_csv(input_filename,
                      sep="|",
                      names=col_names,
-                     dtype=column_datatypes
+                     dtype=datatypes
                      )
     return df
 

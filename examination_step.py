@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Open Risk (https://www.openriskmanagement.com)
+# Copyright (c) 2023 - 2024 Open Risk (https://www.openriskmanagement.com)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -25,9 +25,9 @@ from config import column_names, column_datatypes
 
 # Input parameters for actual data fragment (single loan)
 input_directory = "./SPLIT/"
-acquisition_year = '2010'
-acquisition_qtr = 'Q2'
-filename = input_directory + '000131391438.csv'
+acquisition_year = '2011'
+acquisition_qtr = 'Q1'
+filename = input_directory + '101034254427.csv'
 
 
 def load_file(filename, col_names):
@@ -50,8 +50,7 @@ if __name__ == '__main__':
 
     # Convert the Acquisition Data Column to the Number of Monthly Periods
     input_table['ACT_PERIOD_NUM'] = input_table['ACT_PERIOD'].apply(
-        lambda x: 12 * int(str(x)[1:5]) + int(str(x)[0:1]) if len(str(x)) == 5 else 12 * int(str(x)[2:6]) + int(
-            str(x)[0:2]) if len(str(x)) == 6 else 0)
+        lambda x: 12 * int(str(x)[1:5]) + int(str(x)[0:1]) if len(str(x)) == 5 else 12 * int(str(x)[2:6]) + int(str(x)[0:2]) if len(str(x)) == 6 else 0)
 
     # Group and Select Earliest Period
     acquisition_table = input_table.loc[input_table.groupby('LOAN_ID')['ACT_PERIOD_NUM'].idxmin()]
