@@ -1,4 +1,4 @@
-# Copyright (c) 2023 - 2024 Open Risk (https://www.openriskmanagement.com)
+# Copyright (c) 2023-2024 Open Risk (https://www.openriskmanagement.com)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# Script used in Step 2 of the Open Risk Academy Course
+# Suggested Exercise Solution for Step 2 of the Open Risk Academy Course
 # https://www.openriskacademy.com/mod/page/view.php?id=745
 
 BEGIN {
@@ -32,8 +32,14 @@ BEGIN {
     RowCount++
 }
 END {
-    print RowCount
-    for (i in arr)
-        print "|" i "|" int(100 * arr[i] / RowCount)"%|"
-
+    # for ( i in arr )
+    for (i = 1; i <= NF; i++)
+        {  if (arr[i])
+            {
+                print "|" i "|" int(100 * arr[i] / RowCount)"%|"
+            }
+        else {
+            print "|" i "|" "0%|"
+        }
+        }
 }

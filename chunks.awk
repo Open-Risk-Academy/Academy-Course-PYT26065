@@ -18,6 +18,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Script used in Step 1 of the Open Risk Academy Course
+# https://www.openriskacademy.com/mod/page/view.php?id=743
+
 BEGIN {
     RowCount = 0
     PartCount = 0

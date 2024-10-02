@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Script used in Step 4 of the Open Risk Academy Course
+# https://www.openriskacademy.com/mod/page/view.php?id=747
 
 import pandas as pd
 
@@ -130,7 +132,7 @@ def create_loan_table(df):
 
 # Input parameters for actual data fragment (file segment)
 input_directory = "./PARTS/"
-filename = input_directory + '2011Q1.1.part.csv'
+filename = input_directory + '2011Q1.2.part.csv'
 
 if __name__ == '__main__':
     input_table = load_file(filename, column_names)

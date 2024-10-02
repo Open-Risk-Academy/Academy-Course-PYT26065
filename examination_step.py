@@ -18,6 +18,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Script used in Step 3 of the Open Risk Academy Course
+# https://www.openriskacademy.com/mod/page/view.php?id=746
+
 
 import pandas as pd
 
@@ -54,5 +57,6 @@ if __name__ == '__main__':
 
     # Group and Select Earliest Period
     acquisition_table = input_table.loc[input_table.groupby('LOAN_ID')['ACT_PERIOD_NUM'].idxmin()]
+
     # Reshape table for easier inspection of column values
     print(pd.melt(acquisition_table))

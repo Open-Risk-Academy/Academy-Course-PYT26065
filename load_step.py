@@ -19,8 +19,10 @@
 # SOFTWARE.
 
 
-# This code loads Single Family Loan Performance data
-# into a pandas frame
+# This code loads Single Family Loan Performance data into a pandas frame
+
+# Script used in Step 2 of the Open Risk Academy Course
+# https://www.openriskacademy.com/mod/page/view.php?id=745
 
 # Required python packages
 import pandas as pd
@@ -32,6 +34,7 @@ from config import column_names, column_datatypes
 
 # input_directory = "/insert/your/path/here/"
 input_directory = "./PARTS/"
+
 # filename = input_directory + '2010Q2.64.part.csv'
 filename = input_directory + '2011Q1.1.part.csv'
 
@@ -48,6 +51,7 @@ def load_file(input_filename, col_names, datatypes):
 
 
 if __name__ == '__main__':
+
     # Set up some pandas environment options
     pd.set_option('display.max_columns', 200)
     pd.set_option('display.max_rows', 1000)
@@ -58,7 +62,8 @@ if __name__ == '__main__':
     input_table = load_file(filename, column_names, column_datatypes)
 
     # Explore the dataset with simple print functions
-    print(input_table['LOAN_ID'].values[:100])
+
+    # print(input_table['LOAN_ID'].values[:100])
     # print(input_table.iloc[:, 41])
-    # print(input_table.dtypes)
+    print(input_table.dtypes)
     # print(input_table['RPRCH_DTE'])
