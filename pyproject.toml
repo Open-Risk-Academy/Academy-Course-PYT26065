@@ -1,0 +1,9 @@
+[project]
+name = "academy-course-pyt26065"
+version = "0.1.0"
+description = "Resources for Open Risk Academy Course: Processing US Agency Mortgage Data with Awk and Pandas - Part 1: Static Data"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.3.3",
+]

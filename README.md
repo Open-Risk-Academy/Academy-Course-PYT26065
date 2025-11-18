@@ -1,4 +1,5 @@
 # Academy-Course-PYT26065
+
 Processing Agency Mortgage Data with Awk, Pandas and Django - Part 1: Static Data
 
 ![Course Image](pyt26065_course_image.png)
